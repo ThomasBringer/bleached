@@ -1,9 +1,10 @@
 name: Deploy to GH Pages
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # Manual trigger
   push:
-    branches: -main
+    branches:
+      - main # Fixed branch syntax
 
 jobs:
   build-deploy:
@@ -11,15 +12,19 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
+
       - name: Setup Node.js
-        uses: action/setup-node@v3
+        uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Install Dependecies
+
+      - name: Install Dependencies
         run: npm install
+
       - name: Build project
         run: npm run build
+
       - name: Deploy to GH pages
         uses: peaceiris/actions-gh-pages@v3
         with:
