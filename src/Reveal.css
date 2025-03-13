@@ -1,12 +1,24 @@
+.layers{
+  max-height: 100vh;
+  overflow-y: auto;
+  width: 100vw;
+}
+
+.layers2{
+  height: 2500px;
+}
+
 .hidden-layer {
-  position: absolute;
+  height: 2500px;
   inset: 0;
   background: #ffe07e;
 }
 
 .visible-layer {
+  /* overflow: visible; */
+  height: 2500px;
+  transform: translateY(-2500px);
   pointer-events: none;
-  position: absolute;
   inset: 0;
   background: #ffe7d6;
   mask-image: radial-gradient(circle var(--circle-size) at var(--mouse-x) var(--mouse-y), transparent 100%, black);
