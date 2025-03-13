@@ -9,15 +9,30 @@ const easeInOutQuad = (t) => {
 };
 
 export default function Reveal() {
-  const scrollRef = useRef(null);  // Create a ref for the element
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const mousePosRef = useRef({ x: 0, y: 0 });
+  const mousePosDefRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (scrollRef.current) {
-        setScrollPosition(scrollRef.current.scrollTop);  // Update scroll position
-      }
+    // Function to update mouse position
+    const updateMousePosition = (e) => {      
+      mousePosRef.current = { x: e.clientX, y: e.clientY };
     };
+
+    // Add event listener to track mouse movement
+    document.addEventListener('mousemove', updateMousePosition);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener('mousemove', updateMousePosition);
+    };
+  }, []);
+
+  const scrollRef = useRef(null);  // Create a ref for the element
+  const handleScroll = () => {
+    mousePosDefRef.current =({ x: mousePosRef.current.x, y: scrollRef.current.scrollTop + mousePosRef.current.y });
+  };
+
+  useEffect(() => {
 
     const element = scrollRef.current;
     if (element) {
@@ -31,7 +46,7 @@ export default function Reveal() {
     };
   }, []);
   
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  // const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [circleSize, setCircleSize] = useState(200.0); // Starting circle size
   // eslint-disable-next-line no-unused-vars
   const [circleT, setCircleT] = useState(0.0); // Starting circle size
@@ -45,7 +60,7 @@ export default function Reveal() {
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      setMousePos({ x: e.clientX, y: scrollRef.current.scrollTop + e.clientY });
+      mousePosDefRef.current = ({ x: e.clientX, y: scrollRef.current.scrollTop + e.clientY });
     };
 
     // Add event listener for mouse move globally (on the document)
@@ -79,8 +94,8 @@ export default function Reveal() {
   return (
     <div className='layers' ref={scrollRef}
       style={{
-        '--mouse-x': `${mousePos.x}px`,
-        '--mouse-y': `${mousePos.y}px`,
+        '--mouse-x': `${mousePosDefRef.current.x}px`,
+        '--mouse-y': `${mousePosDefRef.current.y}px`,
         '--circle-size': `${circleSize}px`, // Use animated circle size here
       }}
     >
