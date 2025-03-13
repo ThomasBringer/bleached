@@ -148,6 +148,12 @@ export default function Reveal() {
             Wishlist Bleached on Steam!</button>
           <div style={{ height: '15px' }}></div>
 
+          <iframe style={{visibility:'hidden'}} src="https://store.steampowered.com/widget/3589870/" 
+            frameborder="0" 
+            width="646" 
+            height="190">
+          </iframe>
+
           <SocialMedia></SocialMedia>
 
           {/* <h3>Bleached is a point-and-click interactive story about life and color.</h3>
@@ -255,6 +261,12 @@ export default function Reveal() {
           Wishlist Bleached on Steam!</button>
         <div style={{ height: '15px' }}></div>
 
+        <iframe style={{visibility:'hidden'}} src="https://store.steampowered.com/widget/3589870/" 
+            frameborder="0" 
+            width="646" 
+            height="190">
+          </iframe>
+
         <SocialMedia></SocialMedia>
 
 
@@ -359,6 +371,12 @@ export default function Reveal() {
           onClick={() => window.location.href = 'https://store.steampowered.com/app/3589870'}>
           Wishlist Bleached on Steam!</button>
         <div style={{ height: '15px' }}></div>
+
+        <iframe src="https://store.steampowered.com/widget/3589870/" 
+          frameborder="0" 
+          width="646" 
+          height="190">
+        </iframe>
 
         <SocialMedia></SocialMedia>
 
