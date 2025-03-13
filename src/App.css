@@ -24,6 +24,6 @@ body {
   position: absolute;
   inset: 0;
   background: #ffe7d6;
-  mask-image: radial-gradient(circle 250px at var(--mouse-x) var(--mouse-y), transparent 100%, black);
-  -webkit-mask-image: radial-gradient(circle 250px at var(--mouse-x) var(--mouse-y), transparent 100%, black);
+  mask-image: radial-gradient(circle var(--circle-size) at var(--mouse-x) var(--mouse-y), transparent 100%, black);
+  -webkit-mask-image: radial-gradient(circle var(--circle-size) at var(--mouse-x) var(--mouse-y), transparent 100%, black);
 }
