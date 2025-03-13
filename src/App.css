@@ -21,6 +21,7 @@ body {
 }
 
 .visible-layer {
+  pointer-events: none;
   position: absolute;
   inset: 0;
   background: #ffe7d6;

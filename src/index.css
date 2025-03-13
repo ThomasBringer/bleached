@@ -1,7 +1,8 @@
 :root {
   font-family: Quicksand;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: normal;
+  font-size: 30px;
 
   color: #73464c;
   background-color: #ffe7d6;
@@ -10,4 +11,30 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  cursor: url('cursor/cursor1.png') 25 25, auto;
+}
+
+button {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Quicksand;
+  background-color: transparent;
+  border: 3px solid #73464c;
+  color: #73464c;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0s ease;
+}
+
+button:hover {
+  border: 4px solid #ab5675;
+  color: #ab5675;
+  padding: 9px 19px;
+  cursor: url('cursor/cursor2.png') 16 16, pointer;
+}
+
+a:hover {
+  cursor: url('cursor/cursor2.png') 16 16, pointer;
 }
