@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import './Reveal.css';
 import SocialMedia from './SocialMedia';
 import './Game.css';
-import { width } from '@fortawesome/free-brands-svg-icons/fa42Group';
 // import { useNavigate } from 'react-router-dom';
 
 const easeInOutQuad = (t) => {
@@ -119,7 +118,7 @@ export default function Reveal() {
 
           {!playing && (
             <>
-          <button onClick={handlePlay}>Play the demo</button>
+          <button onClick={handlePlay} style={{backgroundColor: "#ffe07e"}}>Play the demo</button>
           <div style={{ height: '15px' }}></div></>
         )
           }
@@ -143,7 +142,7 @@ export default function Reveal() {
             </div>
           )} */}
 
-          <button style={{visibility: 'hidden', pointerEvents: 'none'}}
+          <button style={{backgroundColor: "#ffe07e"}} className='wishlist-button'
             onClick={() => window.location.href = 'https://store.steampowered.com/app/3589870'}>
             Wishlist Bleached on Steam!</button>
           <div style={{ height: '15px' }}></div>
@@ -250,7 +249,7 @@ export default function Reveal() {
           // </div>
         )}
 
-        <button style={{visibility: 'hidden', pointerEvents: 'none'}}
+        <button className='wishlist-button' style={{visibility: 'hidden', pointerEvents: 'none'}}
           onClick={() => window.location.href = 'https://store.steampowered.com/app/3589870'}>
           Wishlist Bleached on Steam!</button>
         <div style={{ height: '15px' }}></div>
@@ -270,7 +269,7 @@ export default function Reveal() {
             <div className='gif-text'>Your environment is turning white... and painting new shades isn't so simple. With time, perhaps new strokes can bring new perspectives.</div>
           </div>
           <div style={{ width: '50px'}}></div>
-          <img className='gif' src='https://thomasbringer.github.io/bleached/gifs/home.gif' />
+          <img className='gif' src='https://thomasbringer.github.io/bleached/gifs/w_home.gif' />
         </div>
 
         <div style={{ height: '35px'}}></div>
@@ -355,7 +354,7 @@ export default function Reveal() {
           </div>
         )}
 
-        <button
+        <button className='wishlist-button'
           onClick={() => window.location.href = 'https://store.steampowered.com/app/3589870'}>
           Wishlist Bleached on Steam!</button>
         <div style={{ height: '15px' }}></div>

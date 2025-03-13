@@ -9,9 +9,6 @@ export default function App() {
         <Routes>
           {/* Main route */}
           <Route path="/bleached/" element={<Reveal />} />
-          
-          {/* /play route */}
-          <Route path="/bleached/play" element={<Game />} />
         </Routes>
     </Router>
   );
