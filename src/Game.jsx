@@ -1,12 +1,18 @@
 import { useNavigate } from 'react-router-dom';
 import './Game.css';
 import SocialMedia from './SocialMedia';
+import { useState } from 'react';
 
 export default function Game() {
   const navigate = useNavigate(); // Hook for navigation
 
   const handleTitleClick = () => {
     navigate('/bleached/'); // Reroutes to the /bleached route
+  };
+
+  const [playing, setPlaying] = useState(false);
+  const handlePlay = () => {
+    setPlaying(true)
   };
 
   return (
@@ -17,26 +23,38 @@ export default function Game() {
           Bleached
         </h1>
         <h3>A point-and-click story about life and color.</h3>
-        <div style={{ height: '15px'}}></div>
-        <div style={{ width: "1280px", height: "740px", border: "none" }}>
-          <iframe
-            frameBorder="0"
-            src="https://itch.io/embed-upload/12820034?color=ffe7d6"
-            allowFullScreen
-            width="1280"
-            height="740"
-          >
-            <a href="https://thomas-bringer.itch.io/bleached">Play Bleached on itch.io</a>
-          </iframe>
-        </div>
+
+        <div style={{ height: '15px' }}></div>
+
+        {!playing && (
+          <>
+        <button onClick={handlePlay}>Play the demo</button>
+        <div style={{ height: '15px' }}></div></>
+      )
+        }
+        {playing && (
+          <div>
+            <div style={{ width: '1280px', height: '740px', border: 'none' }}>
+              <iframe
+                frameBorder="0"
+                src="https://itch.io/embed-upload/12820034?color=ffe7d6"
+                allowFullScreen
+                width="1280"
+                height="740"
+              >
+                <a href="https://thomas-bringer.itch.io/bleached">Play Bleached on itch.io</a>
+              </iframe>
+            </div>
+          </div>
+        )}
 
         <SocialMedia></SocialMedia>
 
-        <h3>Bleached is a point-and-click interactive story about life and color.</h3>
+        {/* <h3>Bleached is a point-and-click interactive story about life and color.</h3>
         <h3>When every day looks the same, tints slowly fade.</h3>
-        <h3>One day, your canvas is empty. Can you paint something new?</h3>
+        <h3>One day, your canvas is empty. Can you paint something new?</h3> */}
         
-        <div style={{ height: '25px'}}></div>
+        {/* <div style={{ height: '25px'}}></div> */}
 
         <div className='gif-container'>
           <div className='gif-text-container' style = {{textAlign: 'right'}}>
