@@ -9,6 +9,15 @@ const easeInOutQuad = (t) => {
 };
 
 export default function Reveal() {
+  const [syncGifTime, setSyncGifTime] = useState(Date.now());
+
+  useEffect(() => {
+    // Set sync time on component mount
+    setSyncGifTime(Date.now());
+  }, []);
+
+  const gifSrc = (url) => `${url}?t=${syncGifTime}`;
+
   const mousePosRef = useRef({ x: 0, y: 0 });
   const mousePosDefRef = useRef({ x: 0, y: 0 });
 
@@ -163,7 +172,7 @@ export default function Reveal() {
               <div className='gif-text'>Your environment is turning white... and painting new shades isn't so simple. With time, perhaps new strokes can bring new perspectives.</div>
             </div>
             <div style={{ width: '50px'}}></div>
-            <img className='gif' src='https://thomasbringer.github.io/bleached/gifs/home.gif' />
+            <img className='gif' src={gifSrc('https://thomasbringer.github.io/bleached/gifs/home.gif')} />
           </div>
 
           <div style={{ height: '35px'}}></div>
@@ -269,7 +278,7 @@ export default function Reveal() {
             <div className='gif-text'>Your environment is turning white... and painting new shades isn't so simple. With time, perhaps new strokes can bring new perspectives.</div>
           </div>
           <div style={{ width: '50px'}}></div>
-          <img className='gif' src='https://thomasbringer.github.io/bleached/gifs/w_home.gif' />
+          <img className='gif'  src={gifSrc('https://thomasbringer.github.io/bleached/gifs/w_home.gif')} />
         </div>
 
         <div style={{ height: '35px'}}></div>
