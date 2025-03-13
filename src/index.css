@@ -3,6 +3,8 @@
   line-height: 1.5;
   font-weight: normal;
   font-size: 30px;
+  align-items: center;
+  text-align: center;
 
   color: #73464c;
   background-color: #ffe7d6;
@@ -37,4 +39,8 @@ button:hover {
 
 a:hover {
   cursor: url('cursor/cursor2.png') 16 16, pointer;
+}
+
+::selection {
+  background-color:#ffe7d6;
 }

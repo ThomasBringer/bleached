@@ -6,25 +6,3 @@ body {
   align-items: center;
   overflow: hidden;
 }
-
-.reveal-container {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.hidden-layer {
-  position: absolute;
-  inset: 0;
-  background: #ffe07e;
-}
-
-.visible-layer {
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  background: #ffe7d6;
-  mask-image: radial-gradient(circle var(--circle-size) at var(--mouse-x) var(--mouse-y), transparent 100%, black);
-  -webkit-mask-image: radial-gradient(circle var(--circle-size) at var(--mouse-x) var(--mouse-y), transparent 100%, black);
-}
