@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import './Reveal.css';
 import SocialMedia from './SocialMedia';
 import './Game.css';
+import { width } from '@fortawesome/free-brands-svg-icons/fa42Group';
 // import { useNavigate } from 'react-router-dom';
 
 const easeInOutQuad = (t) => {
@@ -103,106 +104,116 @@ export default function Reveal() {
       <div className='layers2'>
 
       <div className="hidden-layer">
-      <>
-      <div className="game-container">
-        <div className="game-container2">
-        <h1 className="game-title">
-          Bleached
-        </h1>
-        <h3>A point-and-click story about life and color.</h3>
+        <>
+        <div className="game-container">
+          <div className="game-container2">
+            <div style = {{backgroundColor: "#ee6a7c", width: '100%', color: '#ffe7d6', borderRadius: "100px", paddingBottom: "5px"}}>
 
-        <div style={{ height: '15px' }}></div>
+          <h1 className="game-title" >
+            Bleached
+          </h1>
+          <h3>A point-and-click story about life and color.</h3>
+            </div>
 
-        {!playing && (
-          <>
-        <button onClick={handlePlay}>Play the demo</button>
-        <div style={{ height: '15px' }}></div></>
-      )
-        }
-        {playing && (
-          <div style={{ height: '740px' }}>
+          <div style={{ height: '10px' }}></div>
+
+          {!playing && (
+            <>
+          <button onClick={handlePlay}>Play the demo</button>
+          <div style={{ height: '15px' }}></div></>
+        )
+          }
+          {playing && (
+            <div style={{ height: '740px' }}>
+            </div>
+          )}
+          {/* {playing && (
+            <div>
+              <div style={{ width: '1280px', height: '740px', border: 'none' }}>
+                <iframe
+                  frameBorder="0"
+                  src="https://itch.io/embed-upload/12820034?color=ffe7d6"
+                  allowFullScreen
+                  width="1280"
+                  height="740"
+                >
+                  <a href="https://thomas-bringer.itch.io/bleached">Play Bleached on itch.io</a>
+                </iframe>
+              </div>
+            </div>
+          )} */}
+
+          <button style={{visibility: 'hidden', pointerEvents: 'none'}}
+            onClick={() => window.location.href = 'https://store.steampowered.com/app/3589870'}>
+            Wishlist Bleached on Steam!</button>
+          <div style={{ height: '15px' }}></div>
+
+          <SocialMedia></SocialMedia>
+
+          {/* <h3>Bleached is a point-and-click interactive story about life and color.</h3>
+          <h3>When every day looks the same, tints slowly fade.</h3>
+          <h3>One day, your canvas is empty. Can you paint something new?</h3> */}
+          
+          {/* <div style={{ height: '25px'}}></div> */}
+
+          <div className='gif-container'>
+            <div className='gif-text-container'
+              style = {{textAlign: 'right',  padding:"25px", backgroundColor: "#ffe07e", borderRadius: "50px"}}
+            >
+              <h3 className='gif-title'>Recolor the world around you.</h3>
+              <div className='gif-text'>Your environment is turning white... and painting new shades isn't so simple. With time, perhaps new strokes can bring new perspectives.</div>
+            </div>
+            <div style={{ width: '50px'}}></div>
+            <img className='gif' src='https://thomasbringer.github.io/bleached/gifs/home.gif' />
           </div>
-        )}
-        {/* {playing && (
-          <div>
-            <div style={{ width: '1280px', height: '740px', border: 'none' }}>
-              <iframe
-                frameBorder="0"
-                src="https://itch.io/embed-upload/12820034?color=ffe7d6"
-                allowFullScreen
-                width="1280"
-                height="740"
-              >
-                <a href="https://thomas-bringer.itch.io/bleached">Play Bleached on itch.io</a>
-              </iframe>
+
+          <div style={{ height: '35px'}}></div>
+
+          <div className='gif-container'>
+            <img className='gif' src='https://thomasbringer.github.io/bleached/gifs/subway.gif' />
+            <div style={{ width: '50px'}}></div>
+            <div className='gif-text-container' style = {{textAlign: 'left',  padding:"25px", backgroundColor: "#72dcbb", borderRadius: "50px"}}>
+              <h3 className='gif-title'>Point and click on anything.</h3>
+              <div className='gif-text'>Walk around, talk to friends and colleagues, take care of pets, play minigames. Everything in the scenery is interactive.</div>
             </div>
           </div>
-        )} */}
 
-        <SocialMedia></SocialMedia>
-
-        {/* <h3>Bleached is a point-and-click interactive story about life and color.</h3>
-        <h3>When every day looks the same, tints slowly fade.</h3>
-        <h3>One day, your canvas is empty. Can you paint something new?</h3> */}
-        
-        {/* <div style={{ height: '25px'}}></div> */}
-
-        <div className='gif-container'>
-          <div className='gif-text-container' style = {{textAlign: 'right'}}>
-            <h3 className='gif-title'>Recolor the world around you.</h3>
-            <div className='gif-text'>Your environment is turning white... and painting new shades isn't so simple. With time, perhaps new strokes can bring new perspectives.</div>
+          <div className='gif-container'>
+            <div className='gif-text-container' style = {{textAlign: 'right',  padding:"25px", backgroundColor: "#34acba", color:"#ffe7d6", borderRadius: "50px"}}>
+              <h3 className='gif-title'>Wake up. Work. Sleep. Repeat.</h3>
+              <div className='gif-text'>Each day is the exact same picture, except that your relationships—with yourself and others—evolve.</div>
+            </div>
+            <div style={{ width: '50px'}}></div>
+            <img className='gif' src='https://thomasbringer.github.io/bleached/gifs/work.gif' />
           </div>
-          <div style={{ width: '50px'}}></div>
-          <img className='gif' src='https://thomasbringer.github.io/bleached/gifs/home.gif' />
-        </div>
 
-        <div style={{ height: '35px'}}></div>
+          <div style={{ height: '25px'}}></div>
+          <h2>Watch the Teaser Trailer for Bleached</h2>
+          <div style={{ height: '10px'}}></div>
 
-        <div className='gif-container'>
-          <img className='gif' src='https://thomasbringer.github.io/bleached/gifs/subway.gif' />
-          <div style={{ width: '50px'}}></div>
-          <div className='gif-text-container' style = {{textAlign: 'left'}}>
-            <h3 className='gif-title'>Point and click on anything.</h3>
-            <div className='gif-text'>Walk around, talk to friends and colleagues, take care of pets, play minigames. Everything in the scenery is interactive.</div>
-          </div>
-        </div>
-
-        <div className='gif-container'>
-          <div className='gif-text-container' style = {{textAlign: 'right'}}>
-            <h3 className='gif-title'>Wake up. Work. Sleep. Repeat.</h3>
-            <div className='gif-text'>Each day is the exact same picture, except that your relationships—with yourself and others—evolve.</div>
-          </div>
-          <div style={{ width: '50px'}}></div>
-          <img className='gif' src='https://thomasbringer.github.io/bleached/gifs/work.gif' />
-        </div>
-
-        <div style={{ height: '25px'}}></div>
-        <h2>Watch the Teaser Trailer for Bleached</h2>
-        <div style={{ height: '10px'}}></div>
-
-        <iframe
-        width="960"
-        height="540"
-        src={`https://www.youtube.com/embed/nqyUEa46Dhs`}
-        title="Bleached Teaser Trailer"
-        frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
-
-        <div style={{ height: '25px'}}></div>
-        <h2>Play Bleached on itch.io</h2>
-        <iframe
+          <iframe style={{ visibility: 'hidden' }}
+          width="960"
+          height="540"
+          src={`https://www.youtube.com/embed/nqyUEa46Dhs`}
+          title="Bleached Teaser Trailer"
           frameBorder="0"
-          src="https://itch.io/embed/3328660?border_width=0&amp;bg_color=ffe7d6&amp;fg_color=73464c&amp;link_color=ab5675&amp;border_color=ffe7d6"
-          width="550"
-          height="165"
-        >
-          <a href="https://thomas-bringer.itch.io/bleached">Bleached by Thomas Bringer</a>
-        </iframe>
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
 
-      </div></div>
-    </>
+          <div style={{ height: '25px'}}></div>
+          <h2>Play Bleached on itch.io</h2>
+          <iframe style={{ visibility: 'hidden' }}
+            frameBorder="0"
+            src="https://itch.io/embed/3328660?border_width=0&amp;bg_color=ffe7d6&amp;fg_color=73464c&amp;link_color=ab5675&amp;border_color=ffe7d6"
+            width="550"
+            height="165"
+          >
+            <a href="https://thomas-bringer.itch.io/bleached">Bleached by Thomas Bringer</a>
+          </iframe>
+
+        </div></div>
+        </>
       </div>
 
       <div className="visible-layer">
@@ -223,6 +234,112 @@ export default function Reveal() {
       )
         }
         {playing && (
+          <div style={{ height: '740px' }}></div>
+          // <div>
+          //   <div style={{ width: '1280px', height: '740px', border: 'none' }}>
+          //     <iframe
+          //       frameBorder="0"
+          //       src="https://itch.io/embed-upload/12820034?color=ffe7d6"
+          //       allowFullScreen
+          //       width="1280"
+          //       height="740"
+          //     >
+          //       <a href="https://thomas-bringer.itch.io/bleached">Play Bleached on itch.io</a>
+          //     </iframe>
+          //   </div>
+          // </div>
+        )}
+
+        <button style={{visibility: 'hidden', pointerEvents: 'none'}}
+          onClick={() => window.location.href = 'https://store.steampowered.com/app/3589870'}>
+          Wishlist Bleached on Steam!</button>
+        <div style={{ height: '15px' }}></div>
+
+        <SocialMedia></SocialMedia>
+
+
+        {/* <h3>Bleached is a point-and-click interactive story about life and color.</h3>
+        <h3>When every day looks the same, tints slowly fade.</h3>
+        <h3>One day, your canvas is empty. Can you paint something new?</h3> */}
+        
+        {/* <div style={{ height: '25px'}}></div> */}
+
+        <div className='gif-container'>
+          <div className='gif-text-container' style = {{textAlign: 'right',  padding:"25px"}}>
+            <h3 className='gif-title'>Recolor the world around you.</h3>
+            <div className='gif-text'>Your environment is turning white... and painting new shades isn't so simple. With time, perhaps new strokes can bring new perspectives.</div>
+          </div>
+          <div style={{ width: '50px'}}></div>
+          <img className='gif' src='https://thomasbringer.github.io/bleached/gifs/home.gif' />
+        </div>
+
+        <div style={{ height: '35px'}}></div>
+
+        <div className='gif-container'>
+          <img className='gif' src='https://thomasbringer.github.io/bleached/gifs/subway.gif' />
+          <div style={{ width: '50px'}}></div>
+          <div className='gif-text-container' style = {{textAlign: 'left',  padding:"25px"}}>
+            <h3 className='gif-title'>Point and click on anything.</h3>
+            <div className='gif-text'>Walk around, talk to friends and colleagues, take care of pets, play minigames. Everything in the scenery is interactive.</div>
+          </div>
+        </div>
+
+        <div className='gif-container'>
+          <div className='gif-text-container' style = {{textAlign: 'right',  padding:"25px"}}>
+            <h3 className='gif-title'>Wake up. Work. Sleep. Repeat.</h3>
+            <div className='gif-text'>Each day is the exact same picture, except that your relationships—with yourself and others—evolve.</div>
+          </div>
+          <div style={{ width: '50px'}}></div>
+          <img className='gif' src='https://thomasbringer.github.io/bleached/gifs/work.gif' />
+        </div>
+
+        <div style={{ height: '25px'}}></div>
+        <h2>Watch the Teaser Trailer for Bleached</h2>
+        <div style={{ height: '10px'}}></div>
+
+        <iframe style={{ visibility: 'hidden' }}
+        width="960"
+        height="540"
+        src={`https://www.youtube.com/embed/nqyUEa46Dhs`}
+        title="Bleached Teaser Trailer"
+        frameBorder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+
+        <div style={{ height: '25px'}}></div>
+        <h2>Play Bleached on itch.io</h2>
+        <iframe style={{ visibility: 'hidden' }}
+          frameBorder="0"
+          src="https://itch.io/embed/3328660?border_width=0&amp;bg_color=ffe7d6&amp;fg_color=73464c&amp;link_color=ab5675&amp;border_color=ffe7d6"
+          width="550"
+          height="165"
+        >
+          <a href="https://thomas-bringer.itch.io/bleached">Bleached by Thomas Bringer</a>
+        </iframe>
+
+      </div></div>
+    </>
+      </div>
+
+      <div className="interactive-layer">
+      <>
+      <div className="game-container">
+        <div className="game-container2">
+        <h1 className="game-title" style={{ visibility: 'hidden' }}>
+          Bleached
+        </h1>
+        <h3 style={{ visibility: 'hidden' }}>A point-and-click story about life and color.</h3>
+
+        <div style={{ height: '15px' }}></div>
+
+        {!playing && (
+          <>
+        <button onClick={handlePlay}>Play the demo</button>
+        <div style={{ height: '15px' }}></div></>
+      )
+        }
+        {playing && (
           <div>
             <div style={{ width: '1280px', height: '740px', border: 'none' }}>
               <iframe
@@ -238,6 +355,11 @@ export default function Reveal() {
           </div>
         )}
 
+        <button
+          onClick={() => window.location.href = 'https://store.steampowered.com/app/3589870'}>
+          Wishlist Bleached on Steam!</button>
+        <div style={{ height: '15px' }}></div>
+
         <SocialMedia></SocialMedia>
 
         {/* <h3>Bleached is a point-and-click interactive story about life and color.</h3>
@@ -246,8 +368,8 @@ export default function Reveal() {
         
         {/* <div style={{ height: '25px'}}></div> */}
 
-        <div className='gif-container'>
-          <div className='gif-text-container' style = {{textAlign: 'right'}}>
+        <div className='gif-container' style={{ visibility: 'hidden' }}>
+          <div className='gif-text-container' style = {{textAlign: 'right',  padding:"25px"}}>
             <h3 className='gif-title'>Recolor the world around you.</h3>
             <div className='gif-text'>Your environment is turning white... and painting new shades isn't so simple. With time, perhaps new strokes can bring new perspectives.</div>
           </div>
@@ -257,17 +379,17 @@ export default function Reveal() {
 
         <div style={{ height: '35px'}}></div>
 
-        <div className='gif-container'>
+        <div className='gif-container' style={{ visibility: 'hidden' }}>
           <img className='gif' src='https://thomasbringer.github.io/bleached/gifs/subway.gif' />
           <div style={{ width: '50px'}}></div>
-          <div className='gif-text-container' style = {{textAlign: 'left'}}>
+          <div className='gif-text-container' style = {{textAlign: 'left', padding:"25px"}}>
             <h3 className='gif-title'>Point and click on anything.</h3>
             <div className='gif-text'>Walk around, talk to friends and colleagues, take care of pets, play minigames. Everything in the scenery is interactive.</div>
           </div>
         </div>
 
-        <div className='gif-container'>
-          <div className='gif-text-container' style = {{textAlign: 'right'}}>
+        <div className='gif-container' style={{ visibility: 'hidden' }}>
+          <div className='gif-text-container' style = {{textAlign: 'right',  padding:"25px"}}>
             <h3 className='gif-title'>Wake up. Work. Sleep. Repeat.</h3>
             <div className='gif-text'>Each day is the exact same picture, except that your relationships—with yourself and others—evolve.</div>
           </div>
@@ -276,7 +398,7 @@ export default function Reveal() {
         </div>
 
         <div style={{ height: '25px'}}></div>
-        <h2>Watch the Teaser Trailer for Bleached</h2>
+        <h2 style={{ visibility: 'hidden' }}>Watch the Teaser Trailer for Bleached</h2>
         <div style={{ height: '10px'}}></div>
 
         <iframe
@@ -290,8 +412,8 @@ export default function Reveal() {
       ></iframe>
 
         <div style={{ height: '25px'}}></div>
-        <h2>Play Bleached on itch.io</h2>
-        <iframe
+        <h2 style={{ visibility: 'hidden' }}>Play Bleached on itch.io</h2>
+        <iframe 
           frameBorder="0"
           src="https://itch.io/embed/3328660?border_width=0&amp;bg_color=ffe7d6&amp;fg_color=73464c&amp;link_color=ab5675&amp;border_color=ffe7d6"
           width="550"

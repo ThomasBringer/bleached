@@ -11,7 +11,7 @@
 .hidden-layer {
   height: 2500px;
   inset: 0;
-  background: #ffe07e;
+  /* background: #ffe07e; */
 }
 
 .visible-layer {
@@ -23,4 +23,10 @@
   background: #ffe7d6;
   mask-image: radial-gradient(circle var(--circle-size) at var(--mouse-x) var(--mouse-y), transparent 100%, black);
   -webkit-mask-image: radial-gradient(circle var(--circle-size) at var(--mouse-x) var(--mouse-y), transparent 100%, black);
+}
+
+.interactive-layer {
+  height: 2500px;
+  transform: translateY(-5000px);
+  inset: 0;
 }

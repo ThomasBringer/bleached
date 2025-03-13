@@ -7,9 +7,9 @@ import './SocialMedia.css';
 const SocialMedia = () => {
   return (
     <div className="social-bar">
-      {/* <a href="https://steamcommunity.com/id/yoursteamid" target="_blank" rel="noopener noreferrer" className="social-icon">
+      <a href="https://store.steampowered.com/app/3589870" target="_blank" rel="noopener noreferrer" className="social-icon">
         <FaSteam size={30} />
-      </a> */}
+      </a>
       <a href="https://thomas-bringer.itch.io/bleached/" target="_blank" rel="noopener noreferrer" className="social-icon">
         <FaItchIo size={30} />
       </a>

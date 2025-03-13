@@ -23,9 +23,9 @@
   text-decoration: underline;
 } */
 
-::selection {
+/* ::selection {
   background-color:#ffe07e;
-}
+} */
 
 .gif-container {
   display: flex;
