@@ -1,12 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import './Game.css';
-import './index.css';
 
 export default function Game() {
   const navigate = useNavigate(); // Hook for navigation
 
   const handleTitleClick = () => {
-    navigate('/bleached'); // Reroutes to the /bleached route
+    navigate('/bleached/'); // Reroutes to the /bleached route
   };
 
   return (
@@ -27,6 +26,8 @@ export default function Game() {
             <a href="https://thomas-bringer.itch.io/bleached">Play Bleached on itch.io</a>
           </iframe>
         </div>
+
+        <img src='https://thomasbringer.github.io/bleached/gifs/home.gif'/>
         <iframe
           frameBorder="0"
           src="https://itch.io/embed/3328660?border_width=0&amp;bg_color=ffe7d6&amp;fg_color=73464c&amp;link_color=ab5675&amp;border_color=ffe7d6"

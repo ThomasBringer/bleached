@@ -8,9 +8,13 @@
 }
 
 .game-title {
-  /* cursor: pointer; */
+  cursor: url('cursor/cursor2.png') 16 16, pointer;
 }
 
 .game-title:hover {
   text-decoration: underline;
+}
+
+::selection {
+  background-color:#ffe07e;
 }
