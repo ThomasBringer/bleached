@@ -13,7 +13,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: url('public/cursor/cursor1.png') 25 25, auto;
+  cursor: url('https://thomasbringer.github.io/bleached/cursor/cursor1.png') 25 25, auto;
 }
 
 button {
