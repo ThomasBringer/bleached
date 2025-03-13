@@ -9,33 +9,6 @@ const easeInOutQuad = (t) => {
 };
 
 export default function Reveal() {
-  const framesHome30FPS = 30; // Adjust this for your actual frame count
-  const wFramesHome30FPS = 30; // Adjust this for your actual frame count
-
-  const frameCount = Math.max(framesHome30FPS, wFramesHome30FPS);
-
-  // Create an array of image URLs
-  const createImageUrlArray = (folder, frameCount) => {
-    const urls = [];
-    for (let i = 0; i < frameCount; i++) {
-      urls.push(`${folder}/frame${i + 1}.png`); // Assuming the images are named like 'frame1.png', 'frame2.png', etc.
-    }
-    return urls;
-  };
-
-  const framesHomeURLs = createImageUrlArray(`https://thomasbringer.github.io/bleached/gifs/framesHome30FPS`, framesHome30FPS);
-  const wFramesHomeURLs = createImageUrlArray(`https://thomasbringer.github.io/bleached/gifs/w_framesHome30FPS`, wFramesHome30FPS);
-
-  const [currentFrame, setCurrentFrame] = useState(0);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentFrame((prevFrame) => (prevFrame + 1) % frameCount); // Go to the next frame
-    }, 1000 / 30); // 30 FPS (adjust the FPS as needed)
-
-    return () => clearInterval(intervalId); // Clean up interval on component unmount
-  }, [frameCount]);
-
 
   const mousePosRef = useRef({ x: 0, y: 0 });
   const mousePosDefRef = useRef({ x: 0, y: 0 });
@@ -191,7 +164,7 @@ export default function Reveal() {
               <div className='gif-text'>Your environment is turning white... and painting new shades isn't so simple. With time, perhaps new strokes can bring new perspectives.</div>
             </div>
             <div style={{ width: '50px'}}></div>
-            <img className='gif' src={framesHomeURLs[currentFrame]} />
+            <img className='gif' src='https://thomasbringer.github.io/bleached/gifs/home.gif' />
           </div>
 
           <div style={{ height: '35px'}}></div>
@@ -297,7 +270,7 @@ export default function Reveal() {
             <div className='gif-text'>Your environment is turning white... and painting new shades isn't so simple. With time, perhaps new strokes can bring new perspectives.</div>
           </div>
           <div style={{ width: '50px'}}></div>
-          <img className='gif' src={wFramesHomeURLs[currentFrame]} />
+          <img className='gif' src='https://thomasbringer.github.io/bleached/gifs/home.gif' />
         </div>
 
         <div style={{ height: '35px'}}></div>
